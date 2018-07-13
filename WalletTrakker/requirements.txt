@@ -1,1 +1,10 @@
-django >=1.9, <2
+certifi==2018.4.16
+chardet==3.0.4
+Django==1.11.14
+googlemaps==3.0.2
+idna==2.7
+pip==9.0.3
+pytz==2018.5
+requests==2.19.1
+setuptools==39.0.1
+urllib3==1.23
