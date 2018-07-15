@@ -6,11 +6,14 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import *
 
 ## CUSTOM IMPORTS
 import googlemaps
 from app.scrape import *
 
+@login_required(login_url='/login')
 def home(request):
     """Renders the home page."""
     test = "lol"
@@ -33,7 +36,7 @@ def home(request):
             'dev_id': dev_id,
         }
     )
-
+@login_required
 def contact(request):
     """Renders the contact page."""
     assert isinstance(request, HttpRequest)
@@ -46,7 +49,7 @@ def contact(request):
             'year':datetime.now().year,
         }
     )
-
+@login_required
 def about(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
